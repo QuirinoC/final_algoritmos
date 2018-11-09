@@ -19,8 +19,8 @@ def root():
         'text':text,
         'created_at':tweet.created_at
     }
-    return jsonify(data)
- 
+    return f'''<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset="utf-8" />\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <title>Page Title</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="\n      crossorigin="anonymous"></script>\n    <script src="main.js"></script>\n</head>\n \n<body>\n    <center>\n        <h1>Fake or not</h1>\n        <p      id="tweet">{data['text']}</p>\n        <button id="fake">Fake</button>\n        <button id="real">Real</button>\n    </center>\n\n</body>\n\n</html>'''
+
 @app.route('/', methods=['POST'])
 def root_post():
     print(request.form)
