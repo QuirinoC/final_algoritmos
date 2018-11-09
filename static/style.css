@@ -1,0 +1,27 @@
+body{
+	background-color:#FAEBD7;
+}
+h1{
+	font-family: 'Poor Story', cursive;
+	font-size: 50px;
+}
+.Sentence{
+	font-family: Helvetica Neue,sans-serif; 
+	font-size: 25px;
+}
+.fake{
+	background-color: red;
+	width: 150px;
+	height: 100px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 50px;
+	color: white;
+}
+.fakent{
+	background-color: blue;
+	width: 150px;
+	height: 100px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 50px;
+	color: white;
+}

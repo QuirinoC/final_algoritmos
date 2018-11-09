@@ -6,15 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-color: #FAEBD7;
+        }
+
+        h1 {
+            font-family: 'Poor Story', cursive;
+            font-size: 50px;
+        }
+
+        .Sentence {
+            font-family: Helvetica Neue, sans-serif;
+            font-size: 25px;
+        }
+
+        .fake {
+            background-color: red;
+            width: 150px;
+            height: 100px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 50px;
+            color: white;
+        }
+
+        .fakent {
+            background-color: blue;
+            width: 150px;
+            height: 100px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 50px;
+            color: white;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script>
+
+        const url = 'http://0.0.0.0:5000/'
+
+        tweet_data = null;
+
+
+        function tweet_response(response) {
+            data = {
+                'id': tweet_data['id'],
+                'response': response
+            }
+            $.post(url, data, function (data, status) {
+            });
+        }
+
+        function update_tweet() {
+            $.get(url, function (data, status) {
+                tweet_data = data;
+                $('#tweet').text(tweet_data.text);
+            });
+        }
+
+        $(document).ready(function () {
+            update_tweet();
+
+            $("#fake").click(function () {
+                tweet_response('fake');
+                update_tweet();
+            });
+
+            $("#real").click(() => {
+                tweet_response('real');
+                update_tweet();
+            });
+        });
+
+
+    </script>
 </head>
- 
+
 <body>
     <center>
         <h1>Fake or not</h1>
-        <p      id="tweet">Server down</p>
+        <p id="tweet">Server down</p>
         <button id="fake">Fake</button>
         <button id="real">Real</button>
     </center>
