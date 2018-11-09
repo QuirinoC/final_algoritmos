@@ -24,7 +24,7 @@ def root():
 @app.route('/', methods=['POST'])
 def root_post():
     print(request.form)
-    return "OK" 
+    return "OKAY" 
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=os.environ['PORT'],debug=True)
