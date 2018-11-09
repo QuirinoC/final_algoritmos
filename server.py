@@ -2,7 +2,6 @@ from flask import Flask, app, request,jsonify
 from flask_cors import CORS
 from random import randint
 import pandas as pd
-import chardet
 from filter import replace_string
 
 app = Flask(__name__)
