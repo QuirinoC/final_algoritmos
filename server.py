@@ -4,6 +4,12 @@ from random import randint
 import pandas as pd
 from filter import replace_string
 import os
+import psycopg2
+import csv
+
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+cur=conn.cursor()
 
 app = Flask(__name__)
 CORS(app)
