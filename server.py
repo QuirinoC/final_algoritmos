@@ -31,5 +31,11 @@ def vote():
     with open('index.html') as f:
         return f.read()
 
+@app.route("/load_csv", methods=['POST'])
+def load_csv():
+    f = request.files['data'].read()
+
+    return "File Loaded"
+
 if __name__ == '__main__':
     app.run('0.0.0.0',port=os.environ['PORT'],debug=True)
