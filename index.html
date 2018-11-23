@@ -45,6 +45,7 @@
     <script>
 
         const url = 'https://algoritmos-tec.herokuapp.com/'
+        //const url = 'http://0.0.0.0:5000/';
 
         tweet_data = null;
 
@@ -54,7 +55,7 @@
                 'id': tweet_data['id'],
                 'response': response
             }
-            $.post(url, data, function (data, status) {
+            $.post(url+"vote", data, function (data, status) {
             });
         }
 
